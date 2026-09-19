@@ -25,7 +25,7 @@ test("Global Login Test",async ({page,loginPage,commonPage,dashboardPage})=>{
 
     await expect(dashboardPage.dashboardheading).toHaveText(dashboardheadingdata.Dashboardheading);
 
-    page.context().storageState({
+    await page.context().storageState({
         path: "./playwright/.auth/auth.json"
     })
 

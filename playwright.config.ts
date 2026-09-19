@@ -41,6 +41,12 @@ export default defineConfig({
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
   reporter: [['html','always']],
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
+  timeout: 60 * 1000, // 60 seconds
+
+  // 2. Expect Timeout: Maximum time assertions like toHaveText() or toBeVisible() will wait (Default: 5000ms / 5s)
+  expect: {
+    timeout: 10 * 1000, // 10 seconds
+  },
   use: {
     /* Base URL to use in actions like `await page.goto('')`. */
     // baseURL: 'http://localhost:3000',

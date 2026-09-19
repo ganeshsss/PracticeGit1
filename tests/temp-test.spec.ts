@@ -8,3 +8,4 @@ test("Temp Test",async ({page,loginPage,commonPage,gotoUrl})=>{
 
 
 })
+
