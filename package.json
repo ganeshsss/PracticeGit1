@@ -1,0 +1,23 @@
+{
+  "name": "playwrightwithtypescriptframework6",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test_demo_cr_hd": "cross-env ENV_NAME=demo npx playwright test --headed"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "@playwright/test": "^1.63.0",
+    "@types/crypto-js": "^4.2.2",
+    "@types/node": "^26.6.1"
+  },
+  "dependencies": {
+    "cross-env": "^10.1.0",
+    "crypto-js": "^4.2.0",
+    "dotenv": "^18.0.0"
+  }
+}
