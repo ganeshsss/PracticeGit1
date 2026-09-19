@@ -5,7 +5,7 @@ export class CommonPage{
     private secretkey:string;
 
     constructor(){
-        console.log("SECRET_KEY received in CommonPage:", process.env.SECRET_KEY ? "YES (Loaded)" : "NO (Undefined)");
+        //console.log("SECRET_KEY received in CommonPage:", process.env.SECRET_KEY ? "YES (Loaded)" : "NO (Undefined)");
         if(process.env.SECRET_KEY){
             this.secretkey= process.env.SECRET_KEY;
         }
