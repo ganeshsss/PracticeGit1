@@ -1,3 +1,16 @@
+import { FullConfig } from '@playwright/test';
+import dotenv from 'dotenv';
+import path from 'path';
+import fs from 'fs';
+
+const envFileName = process.env.ENV_NAME ? `.env.${process.env.ENV_NAME}` : `.env.demo`;
+const envFilePath = path.resolve(__dirname, '../env-files', envFileName);
+
+if (fs.existsSync(envFilePath)) {
+  dotenv.config({ path: envFilePath });
+}
+
+
 import{test,expect} from '../fixture/common-fixture'
 import dashboardheadingdata from '../data/global-setup-data.json'
 
