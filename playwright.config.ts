@@ -1,5 +1,7 @@
 import { defineConfig, devices } from '@playwright/test';
 import dotenv from 'dotenv';
+import path from 'path';
+import fs from 'fs';
 
 
 /**
@@ -10,9 +12,18 @@ import dotenv from 'dotenv';
 // import path from 'path';
 // dotenv.config({ path: path.resolve(__dirname, '.env') });
 
-dotenv.config({
-  path : process.env.ENV_NAME ? `./env-files/.env.${process.env.ENV_NAME}` : `./env-files/.env.demo`
-})
+// dotenv.config({
+//   path : process.env.ENV_NAME ? `./env-files/.env.${process.env.ENV_NAME}` : `./env-files/.env.demo`
+// })
+
+const envFileName=process.env.ENV_NAME ? `.env.${process.env.ENV_NAME}` : `.env.demo`;
+const envFilePath=path.resolve(__dirname, 'env-files', envFileName)
+
+// Loads local file if present; skips in CI to use injected GitHub Secrets
+if (fs.existsSync(envFilePath)) {
+  dotenv.config({ path: envFilePath });
+}
+
 
 /**
  * See https://playwright.dev/docs/test-configuration.
