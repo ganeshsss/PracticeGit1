@@ -1,4 +1,4 @@
-import {test as baseTest} from '../fixture/common-fixture'
+import {test as baseTest,expect} from '../fixture/common-fixture'
 
 type HooksFixtureType={
     gotoUrl: void;
@@ -11,3 +11,5 @@ export const test =baseTest.extend<HooksFixtureType>({
 
     }
 })
+
+export {expect}
