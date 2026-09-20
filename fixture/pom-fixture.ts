@@ -3,12 +3,14 @@ import {LoginPage} from '../pages/LoginPage'
 import {DashboardPage} from '../pages/DashboardPage'
 import {LeftNavigationPage} from '../pages/LeftNavigationPage'
 import { AddEmployeePage } from '../pages/AddEmployeePage'
+import { PimEmployeeListPage } from '../pages/PimEmployeeListPage'
 
 type PomFixtureType={
     loginPage:LoginPage
     dashboardPage:DashboardPage
     leftNavigationPage:LeftNavigationPage
     addEmployeePage:AddEmployeePage
+    pimEmployeeListPage: PimEmployeeListPage
 }
 
 export const test =baseTest.extend<PomFixtureType>({
@@ -25,6 +27,11 @@ export const test =baseTest.extend<PomFixtureType>({
     },
     addEmployeePage:async({page},use)=>{
         await use(new AddEmployeePage(page))
+    },
+    pimEmployeeListPage:async ({page},use)=>{
+        await use(new PimEmployeeListPage(page))
+        
+
     }
     
 })
