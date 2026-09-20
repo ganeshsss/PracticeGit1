@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test_demo_cr_hd": "cross-env ENV_NAME=demo npx playwright test --headed",
-    "test_demo_cr_hd_searchemployee": "cross-env ENV_NAME=demo npx playwright test tests/tc02-search-employee-by-valid-id.spec.ts --headed"
+    "test_demo_cr_hd_searchemployee": "cross-env ENV_NAME=demo npx playwright test tests/tc02-search-employee-by-valid-id.spec.ts --headed",
+    "test_demo_cr_hd_codingpractice": "cross-env ENV_NAME=demo npx playwright test tests/codingpractice.ts"
   },
   "keywords": [],
   "author": "",
