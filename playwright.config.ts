@@ -16,6 +16,12 @@ import fs from 'fs';
 //   path : process.env.ENV_NAME ? `./env-files/.env.${process.env.ENV_NAME}` : `./env-files/.env.demo`
 // })
 
+// Helper function to clear screenshots folder before tests run
+const screenshotsDir = path.join(__dirname, 'screenshots');
+if (fs.existsSync(screenshotsDir)) {
+    fs.rmSync(screenshotsDir, { recursive: true, force: true });
+}
+
 const envFileName=process.env.ENV_NAME ? `.env.${process.env.ENV_NAME}` : `.env.demo`;
 const envFilePath=path.resolve(__dirname, 'env-files', envFileName)
 
@@ -39,7 +45,7 @@ export default defineConfig({
   /* Opt out of parallel tests on CI. */
   workers: process.env.CI ? 1 : undefined,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
-  reporter: [['html','always']],
+  reporter: [['html',{open:'always'}]],
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   timeout: 60 * 1000, // 60 seconds
 
